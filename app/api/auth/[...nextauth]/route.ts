@@ -19,18 +19,18 @@ export const authOptions: NextAuthOptions = {
       },
 
       async authorize(credentials) {
-        // if (
-        //   credentials?.email === process.env.NEXT_PUBLIC_STATIC_EMAIL &&
-        //   credentials?.password === process.env.NEXT_PUBLIC_STATIC_PASSWORD
-        // ) {
+        if (
+          credentials?.email === process.env.NEXT_PUBLIC_STATIC_EMAIL &&
+          credentials?.password === process.env.NEXT_PUBLIC_STATIC_PASSWORD
+        ) {
           return {
             id: "1",
             email: credentials?.email,
             role: "admin",
             name:"sundar"
           } as MyUser;
-        // }
-        // return null;
+        }
+        return null;
       },
     }),
   ],
